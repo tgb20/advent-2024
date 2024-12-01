@@ -1,6 +1,6 @@
 # Advent of Code 2024
 
-## Deno
+## Using Deno as part of [Advent of Code 2024 with Deno](https://deno.com/blog/advent-of-code-2024)
 
 | Day | Stars |
 | --- | ----- |
