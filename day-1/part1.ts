@@ -4,14 +4,10 @@ const { listA, listB } = await fileToArrays("inputs/real.txt");
 listA.sort();
 listB.sort();
 
-let diffSum = 0;
-
-for (let i = 0; i < listA.length; i++) {
-  const v1 = listA[i];
-  const v2 = listB[i];
-
-  const diff = Math.abs(v1 - v2);
-  diffSum += diff;
-}
+const diffSum = listA.reduce((accumulator, _, index) => {
+  const v1 = listA[index];
+  const v2 = listB[index];
+  return accumulator + Math.abs(v1 - v2);
+}, 0);
 
 console.log(diffSum);
