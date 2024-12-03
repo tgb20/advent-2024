@@ -6,8 +6,22 @@ const reports = lines.map((l) => l.split(" ").map(Number));
 let safeReports = 0;
 
 for (const report of reports) {
-  const reportSafe = checkSafe(report);
-  if (reportSafe) {
+  const initalSafe = checkSafe(report);
+  if (initalSafe) {
+    safeReports++;
+    continue;
+  }
+  let safeWithoutCount = 0;
+  for (let i = 0; i < report.length; i++) {
+    const copy = report.filter((_, index) => {
+      return index != i;
+    });
+    if (checkSafe(copy)) {
+      safeWithoutCount++;
+    }
+  }
+
+  if (safeWithoutCount >= 1) {
     safeReports++;
   }
 }
