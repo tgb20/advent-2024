@@ -1,4 +1,4 @@
-const text = await Deno.readTextFile("inputs/real.txt");
+const text = await Deno.readTextFile("../inputs/day3real.txt");
 
 const mulRegex = /(mul\([0-9]+,[0-9]+\))/g;
 
